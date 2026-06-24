@@ -22,8 +22,80 @@
        }
       input{
        padding: 8px;
-  
+       margin: 5px;
+       width: calc(100% - 20px);
+       }
+       button{
+        padding: 10px;
+        backgroubd: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+        }
+        table{
+         width: 100%;
+         margin-top: 20px;
+         border-collapse: collapse;
+         }
+
+         table, th, td {
+          border: 1px solid #ccc;
+          text-aling: center;
+          }
+          th, td {
+           padding: 10px;
+          }
+          
+          .delete{
+           background: red;
+           padding: 5px;
+           color: white;
+           cursos: pointer;
+           border: none;
+          }
+        </style>
+      </head>
+      <body>
+
+      <div class="container">
+       <h1>Contre de Estoque</h1>
+
+       <input type="text" id="produto" placeholder="Nome do produto">
+       <input type="number" id="quantidade" placeholder="Quantidade">
+
+       <button onclick="adicionarProduto()">Adicionar Produto</button>
+
+       <table>
+        <thead>
+         <tr>
+           <th>Produto</th>
+           <th>Quantidade</th>
+           <th>Ação</th>
+          </tr>
+         </thead>
+         <tbody id="tabelaEstoque"></tbody>
+        </table>
+      </div>
+
+      <script> 
+       let estoque = JSON.parse(localStorage.getltem("estoque")) || [];
+
+       function salvad (){
+        localStorage.setltem("estoque", JSON.stringify(estoque));
+        }
+
+        function renderizar (){
+         let tabela = document.getElementByld("tabelaEstoque");
+         tabela.innerHTML = "";
+
+         estoque.forEach((item. index) => {
+          tabela.innerHTML += `
+           <tr>
+            <td>${item.nome}</td>
+            <td>$
+
+    
 
   
-  </style>
-</head>
